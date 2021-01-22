@@ -1,20 +1,21 @@
 function getHistory (){
-    return document.getElementById("hasil-ketik").innerText;
+    return document.getElementById("hasil_ketik").innerText;
 }
 
+    
 function printHistory(){
-    document.getElementById("hasil-ketik");
+    document.getElementById("hasil_ketik");
 }
-function getPrint(){
-    return document.getElementById("hasil-keluaran").innerText;
+function getOutput(){
+    return document.getElementById("hasil_keluaran").innerText;
 }
 
 function printOutput(num){
     if(num==""){
-        document.getElementById("hasil-keluaran").innerText=num;
+        document.getElementById("hasil_keluaran").innerText=num;
 
     } else {
-        document.getElementById("hasil-keluaran").innerText=getFormattedNumber(num);
+        document.getElementById("hasil_keluaran").innerText=getFormattedNumber(num);
     }
 }
 
@@ -48,7 +49,7 @@ for(var i =0;i<operator.length;i++){
 		else{
 			var output=getOutput();
 			var history=getHistory();
-			if(output==""&&history!=""){
+			if(output==""&&history!=""){ //history
 				if(isNaN(history[history.length-1])){
 					history= history.substr(0,history.length-1);
 				}
@@ -75,7 +76,7 @@ var number = document.getElementsByClassName("number");
 for(var i =0;i<number.length;i++){
 	number[i].addEventListener('click',function(){
 		var output=reverseNumberFormat(getOutput());
-		if(output!=NaN){ //if output is a number
+		if(output!=NaN){ 
 			output=output+this.id;
 			printOutput(output);
 		}
